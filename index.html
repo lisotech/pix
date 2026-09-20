@@ -542,7 +542,6 @@
         const themeIcon = document.getElementById('themeIcon');
 
         let img = new Image();
-        let fileName = 'zpix-editor.png';
         let originalWidth = 0;
         let originalHeight = 0;
         let rotationAngle = 0;
@@ -734,8 +733,9 @@
         });
 
         downloadBtnTop.addEventListener('click', () => {
+            const randomNumber = Math.floor(10000 + Math.random() * 90000);
             const link = document.createElement('a');
-            link.download = 'zpix-editor.png';
+            link.download = `ELIs${randomNumber}.png`;
             link.href = canvas.toDataURL('image/png');
             link.click();
         });
